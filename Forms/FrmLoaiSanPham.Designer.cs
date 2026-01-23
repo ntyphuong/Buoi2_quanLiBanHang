@@ -39,6 +39,8 @@
             btnThoat = new Button();
             groupBox2 = new GroupBox();
             dataGridView = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            TenLoai = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
@@ -145,17 +147,38 @@
             // 
             // dataGridView
             // 
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Location = new Point(0, 22);
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TenLoai });
+            dataGridView.Dock = DockStyle.Fill;
+            dataGridView.Location = new Point(3, 19);
+            dataGridView.MultiSelect = false;
             dataGridView.Name = "dataGridView";
-            dataGridView.Size = new Size(723, 269);
+            dataGridView.Size = new Size(717, 269);
             dataGridView.TabIndex = 0;
+            // 
+            // ID
+            // 
+            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            ID.DataPropertyName = "ID";
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.Width = 43;
+            // 
+            // TenLoai
+            // 
+            TenLoai.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            TenLoai.DataPropertyName = "TenLoai";
+            TenLoai.HeaderText = "Tên Loại Sản Phẩm";
+            TenLoai.Name = "TenLoai";
             // 
             // FrmLoaiSanPham
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(750, 450);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "FrmLoaiSanPham";
@@ -180,5 +203,7 @@
         private Label label1;
         private GroupBox groupBox2;
         private DataGridView dataGridView;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn TenLoai;
     }
 }

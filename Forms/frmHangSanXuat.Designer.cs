@@ -30,6 +30,8 @@
         {
             groupBox2 = new GroupBox();
             dataGridView = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            TenHangSanXuat = new DataGridViewTextBoxColumn();
             groupBox1 = new GroupBox();
             btnThoat = new Button();
             btnHuyBo = new Button();
@@ -39,8 +41,6 @@
             btnThem = new Button();
             txtTenHangSanXuat = new TextBox();
             label1 = new Label();
-            ID = new DataGridViewTextBoxColumn();
-            TenHangSanXuat = new DataGridViewTextBoxColumn();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             groupBox1.SuspendLayout();
@@ -70,6 +70,21 @@
             dataGridView.Size = new Size(717, 269);
             dataGridView.TabIndex = 0;
             // 
+            // ID
+            // 
+            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            ID.DataPropertyName = "ID";
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.Width = 43;
+            // 
+            // TenHangSanXuat
+            // 
+            TenHangSanXuat.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            TenHangSanXuat.DataPropertyName = "TenHangSanXuat";
+            TenHangSanXuat.HeaderText = "Tên Hãng Sản Xuất";
+            TenHangSanXuat.Name = "TenHangSanXuat";
+            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(btnThoat);
@@ -95,6 +110,7 @@
             btnThoat.TabIndex = 7;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = true;
+            btnThoat.Click += btnThoat_Click;
             // 
             // btnHuyBo
             // 
@@ -104,6 +120,7 @@
             btnHuyBo.TabIndex = 6;
             btnHuyBo.Text = "Hủy bỏ";
             btnHuyBo.UseVisualStyleBackColor = true;
+            btnHuyBo.Click += btnHuyBo_Click;
             // 
             // btnLuu
             // 
@@ -114,6 +131,7 @@
             btnLuu.TabIndex = 5;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = true;
+            btnLuu.Click += btnLuu_Click;
             // 
             // btnXoa
             // 
@@ -124,6 +142,7 @@
             btnXoa.TabIndex = 4;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
             // 
             // btnSua
             // 
@@ -133,6 +152,7 @@
             btnSua.TabIndex = 3;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
             // 
             // btnThem
             // 
@@ -160,21 +180,6 @@
             label1.TabIndex = 0;
             label1.Text = "Tên hãng sản xuất (*):";
             // 
-            // ID
-            // 
-            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            ID.DataPropertyName = "ID";
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.Width = 43;
-            // 
-            // TenHangSanXuat
-            // 
-            TenHangSanXuat.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            TenHangSanXuat.DataPropertyName = "TenHangSanXuat";
-            TenHangSanXuat.HeaderText = "Tên Hãng Sản Xuất";
-            TenHangSanXuat.Name = "TenHangSanXuat";
-            // 
             // frmHangSanXuat
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -184,6 +189,7 @@
             Controls.Add(groupBox1);
             Name = "frmHangSanXuat";
             Text = "frmHangSanXuat";
+            Load += frmHangSanXuat_Load;
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             groupBox1.ResumeLayout(false);
